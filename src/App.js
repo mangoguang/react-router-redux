@@ -4,6 +4,8 @@ import Routes from './routes'
 // import {flexible} from './assets/js/flexible'
 // // flexible_css()
 // flexible()
+import './css/normalize.css'
+import './css/main.css'
 
 class App extends Component {
   constructor (props) {

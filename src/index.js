@@ -6,8 +6,8 @@ import todoApp from './reducers'
 import App from './App'
 import { HashRouter } from 'react-router-dom'
 
-import './css/normalize.css'
-import './css/main.css'
+// import './css/normalize.css'
+// import './css/index.css'
 import registerServiceWorker from './registerServiceWorker'
 
 let store = createStore(todoApp)

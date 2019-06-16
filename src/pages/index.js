@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
+import World from '../components/map/world'
+import LeftTop from '../components/leftTop'
+import LeftBot from '../components/leftBot'
 
 // 组件
-import Header from '../components/header'
+// import Header from '../components/header'
+// import worldOption from '../utils/options/worldOption'
 
 import { connect } from 'react-redux'
 import { changeAwards } from '../actions'
@@ -11,6 +15,8 @@ import '../css/normalize.css'
 import '../sass/main.scss'
 import '../sass/index.scss'
 
+// 图片引入
+import titleImg from '../assets/images/title.png'
 // let store = createStore(todoApp)
 
 class Index extends Component {
@@ -35,19 +41,72 @@ class Index extends Component {
     this.props.changeAwards([123, 234, 345])
   }
   render () {
-    // const styleComponent = {
-    //   // draw: {
-    //   //   height: `${this.state.height}px`
-    //   // },
-    // }
+    const styleComponent = {
+      index: {
+        width: '100%',
+        height: '100vh',
+        minWidth: '1600px',
+        background: '#050A32',
+        overflow: 'hidden'
+      },
+      header: {
+        height: '108px',
+        lineHeight: '108px',
+        textAlign: 'center',
+        fontWeight: '400',
+        margin: 0,
+        background: `url(${titleImg}) no-repeat`,
+        backgroundSize: 'auto 100%',
+        backgroundPosition: 'center'
+      },
+      container: {
+        marginTop: '-108px',
+        paddingTop: '108px',
+        listStyle: 'none',
+        height: '100%',
+        boxSizing: 'border-box'
+      },
+      main: {
+        float: 'left',
+        width: '100%',
+        height: '600px'
+      },
+      content: {
+        marginLeft: '500px',
+        marginRight: '500px',
+        width: '100%',
+        height: '100%'
+      },
+      left: {
+        width: '500px',
+        float: 'left',
+        height: '100%',
+        marginLeft: '-100%',
+        borderLeft: '1px'
+      },
+      right: {
+        width: '500px',
+        background: 'blue',
+        float: 'left',
+        height: '100%',
+        marginLeft: '-500px'
+      }
+    }
     return (
-      <div className="index">
-      <Header />
-        <div className="btns">
-          <button onClick={this.clickBtn1} className={this.state.btnStatus[0] ? 'on' : 'out'} type="button">{this.state.btnStatus[0] ? '中奖名单' : ''}</button>
-          <button onClick={this.clickBtn2} className={this.state.btnStatus[1] ? 'on' : 'out'} type="button">{this.state.btnStatus[1] ? '抽奖规则' : ''}</button>
-          <button onClick={this.clickBtn3} className={this.state.btnStatus[2] ? 'on' : 'out'} type="button">{this.state.btnStatus[2] ? '奖项设置' : ''}</button>
+      <div className="index" style={styleComponent.index}>
+        <div className="header" style={styleComponent.header}>
+          <h1 style={styleComponent.header}></h1>
         </div>
+        <ul className="container" style={styleComponent.container}>
+          <li className="main" style={styleComponent.main}>
+            <li className="content" style={styleComponent.content}></li>
+          </li>
+          <li className="left" style={styleComponent.left}>
+            <LeftTop />
+            <LeftBot />
+          </li>
+          <li className="right" style={styleComponent.right}></li>
+        </ul>
       </div>
     )
   }
