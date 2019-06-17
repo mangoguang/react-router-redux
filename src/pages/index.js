@@ -74,7 +74,7 @@ class Index extends Component {
       content: {
         marginLeft: '500px',
         marginRight: '500px',
-        width: '100%',
+        // width: '100%',
         height: '100%'
       },
       left: {
@@ -99,7 +99,9 @@ class Index extends Component {
         </div>
         <ul className="container" style={styleComponent.container}>
           <li className="main" style={styleComponent.main}>
-            <li className="content" style={styleComponent.content}></li>
+            <li className="content" style={styleComponent.content}>
+              <World />
+            </li>
           </li>
           <li className="left" style={styleComponent.left}>
             <LeftTop />
