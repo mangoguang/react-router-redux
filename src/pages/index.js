@@ -38,7 +38,7 @@ class Index extends Component {
 
   }
   componentDidMount () {
-    this.props.changeAwards([123, 234, 345])
+    this.props.changeAwards([123, 234, 3451])
   }
   render () {
     const styleComponent = {
